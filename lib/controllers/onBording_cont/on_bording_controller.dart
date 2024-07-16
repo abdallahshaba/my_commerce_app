@@ -27,7 +27,7 @@ class OnBordingControllerImp extends OnBordingController {
       Get.toNamed(AppRoutes.home);
     }
     pageController.animateToPage(currentPage,
-        duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+        duration: const Duration(seconds: 1), curve: Curves.easeInOut);
   }
 
   @override
