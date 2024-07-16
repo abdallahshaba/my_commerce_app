@@ -24,7 +24,7 @@ class OnBordingControllerImp extends OnBordingController {
   next() {
     currentPage++;
     if (currentPage > onBordingList.length - 1) {
-      Get.toNamed(AppRoutes.home);
+      Get.toNamed(AppRoutes.startScreen);
     }
     pageController.animateToPage(currentPage,
         duration: const Duration(seconds: 1), curve: Curves.easeInOut);
