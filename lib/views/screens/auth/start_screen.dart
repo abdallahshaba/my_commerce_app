@@ -33,7 +33,7 @@ class StartScreen extends GetView<StartControllerImp> {
             text: "Create account", 
             color: AppColors.blue2 , 
             onPressed: () {
-              controller.goToSinUpScreen();
+              controller.goToSinUpScreen(context);
            },
            ),
            const SizedBox(height: 20,),
@@ -41,7 +41,7 @@ class StartScreen extends GetView<StartControllerImp> {
               text: "Login", 
               color: AppColors.primaryColor2 , 
               onPressed: () {
-                controller.goToLoginScreen();
+                controller.goToLoginScreen(context);
            },
            ),
           ],

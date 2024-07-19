@@ -10,6 +10,6 @@ List<GetPage<dynamic>>? getPages = [
    GetPage(name: AppRoutes.onBordingScreen, page:() => const OnboardingScreen(),),
    GetPage(name: AppRoutes.home, page:() => const HomeScreen(),),
    GetPage(name: AppRoutes.startScreen, page:() => const StartScreen(),),
-   GetPage(name: AppRoutes.login, page:() => const LoginScreen(),),
-   GetPage(name: AppRoutes.signUp, page:() => const SignUpScreen(),),
+   GetPage(name: AppRoutes.login, page:() =>  LoginScreen(),),
+   GetPage(name: AppRoutes.signUp, page:() =>  SignUpScreen(),),
 ];

@@ -1,18 +1,26 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_ecommerce_app/core/constants/app_routes.dart';
+import 'package:my_ecommerce_app/views/widgets/auth/custom_page_route.dart';
 
 abstract class StartController extends GetxController{
-   goToLoginScreen();
-   goToSinUpScreen();
+   goToLoginScreen(context2);
+   goToSinUpScreen(context);
 }
 class StartControllerImp extends StartController{
   @override
-  goToLoginScreen() {
-    Get.toNamed(AppRoutes.login);
+  goToLoginScreen(context2) {
+    Navigator.push(
+            context2,
+            CustomPageRouteBuilder2(),
+          );
   }
   @override
-  goToSinUpScreen() {
-    Get.toNamed(AppRoutes.signUp);
+  goToSinUpScreen(context) {
+    Navigator.push(
+            context,
+            CustomPageRouteBuilder(),
+          );
+     
   }
 
 }
