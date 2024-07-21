@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:my_ecommerce_app/core/constants/app_colors.dart';
+import 'package:my_ecommerce_app/core/constants/app_image_asset.dart';
+import 'package:my_ecommerce_app/core/constants/app_routes.dart';
 import 'package:my_ecommerce_app/core/functions/crud.dart';
 import 'package:my_ecommerce_app/core/functions/handling_data.dart';
 import 'package:my_ecommerce_app/core/functions/status_request.dart';
@@ -18,7 +21,7 @@ class SignUpControllerImp extends SignUpController{
   TextEditingController phone = TextEditingController(); 
 
   SignUpData signUpData = SignUpData(Get.put(Crud()));
-  late StatusRequest statusRequest;
+   StatusRequest? statusRequest;
 
 
 
@@ -35,6 +38,19 @@ class SignUpControllerImp extends SignUpController{
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == 'success') {
         print("============================================success = ${response}");
+        Get.defaultDialog(
+              title: "Done",
+              titleStyle: const TextStyle(
+                  fontWeight: FontWeight.bold, color: AppColors.blue2),
+              middleText: "Account successfully created",
+              middleTextStyle: const TextStyle(fontWeight: FontWeight.bold),
+               actions: [
+                Lottie.asset(AppImageAsset.success, height: 220, width: 300)
+              ]);
+              Future.delayed(Duration(seconds: 2) , (){
+                Get.offAllNamed(AppRoutes.verifyCodeSignUp);
+              });
+              
       }
       else{
         Get.defaultDialog(
@@ -43,7 +59,9 @@ class SignUpControllerImp extends SignUpController{
                   fontWeight: FontWeight.bold, color: AppColors.blue2),
               middleText: "Phone Number Or Email Already Exists",
               middleTextStyle: const TextStyle(fontWeight: FontWeight.bold),
-              );
+               actions: [
+                Lottie.asset(AppImageAsset.failedFace, height: 220, width: 300)
+              ]);
           statusRequest = StatusRequest.faliure;
       }
     }

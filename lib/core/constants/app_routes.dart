@@ -8,6 +8,7 @@ class AppRoutes {
   static const String startScreen = "/startScreen";
   static const String login = "/login";
   static const String signUp = "/signUp";
+  static const String verifyCodeSignUp = "/verifyCodeSignUp";
 
 
 

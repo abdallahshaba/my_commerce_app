@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce_app/views/screens/auth/login_screen.dart';
 import 'package:my_ecommerce_app/views/screens/auth/sign_up_screen.dart';
+import 'package:my_ecommerce_app/views/screens/home/home.dart';
 
 class CustomPageRouteBuilder extends PageRouteBuilder {
   CustomPageRouteBuilder()
@@ -29,6 +30,20 @@ class CustomPageRouteBuilder2 extends PageRouteBuilder {
 }
 
 
+
+
+class CustomPageRouteBuilder3 extends PageRouteBuilder {
+  CustomPageRouteBuilder3()
+      : super(
+        pageBuilder: (context, animation, secondaryAnimation) => HomeScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return  FadeTransition(
+            opacity: animation,
+            child: child,
+          );
+        },
+      );
+}
 
 // ScaleTransition(
 //             scale: Tween<double>(begin: 0.0, end: 1.0).animate(
